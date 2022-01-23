@@ -19,11 +19,13 @@ class InfoMessage:
         self.calories = calories
 
     def get_message(self) -> str:
-        return (f"Тип тренировки: {self.training_type}; "
-                f"Длительность: {self.duration:.3f} ч.; "
-                f"Дистанция: {self.distance:.3f} км; "
-                f"Ср. скорость: {self.speed:.3f} км/ч; "
-                f"Потрачено ккал: {self.calories:.3f}.")
+        return (
+            f"Тип тренировки: {self.training_type}; "
+            f"Длительность: {self.duration:.3f} ч.; "
+            f"Дистанция: {self.distance:.3f} км; "
+            f"Ср. скорость: {self.speed:.3f} км/ч; "
+            f"Потрачено ккал: {self.calories:.3f}."
+        )
 
 
 class Training:
@@ -31,7 +33,7 @@ class Training:
 
     LEN_STEP = 0.65  # Константа - Средняя длина шага
     M_IN_KM = 1000  # Константа - количество метров в 1 км
-    
+
     def __init__(
         self,
         action: int,
@@ -71,7 +73,7 @@ class Running(Training):
 
     COEF_RUN_1 = 18  # Коэффициент расчета калорий для бега
     COEF_RUN_2 = 20  # Коэффициент расчета калорий для бега
-    COEF_TIME_1 = 60 # Количество минут в час
+    COEF_TIME_1 = 60  # Количество минут в час
 
     def get_spent_calories(self) -> float:
         return (
@@ -89,7 +91,7 @@ class SportsWalking(Training):
     COEF_WLK_1 = 0.035  # Коэффициент для расчета калорий для ходьбы
     COEF_WLK_2 = 2  # Коэффициент для расчета калорий для ходьбы
     COEF_WLK_3 = 0.029  # Коэффициент для расчета калорий для ходьбы
-    COEF_TIME_2 = 60 # Количество минут в час
+    COEF_TIME_2 = 60  # Количество минут в час
 
     def __init__(
         self, action: int, duration: float, weight: float, height: float
@@ -116,7 +118,7 @@ class Swimming(Training):
     COEF_SWM_1 = 1.1  # Коэффициент для расчета калорий плавание
     COEF_SWM_2 = 2  # Коэффициент для расчета калорий плавание
     LEN_STEP = 1.38  # Коэффициент для расчета калорий плавание
-    
+
     def __init__(
         self,
         action: int,
